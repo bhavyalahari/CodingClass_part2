@@ -1,0 +1,61 @@
+import java.util.*;
+class prifac
+{
+static int prime[]=new int[1000005];
+public static void sieve()
+{
+for(int i=0;i<1000005;i++)
+{
+prime[i]=i;
+}
+prime[0]=1;
+prime[1]=1;
+for(int j=2;j*j<1000005;j++)
+{
+if(prime[j]==j)
+{
+for(int k=j*j;k<1000005;k+=j)
+{
+prime[k]=j;
+}
+}
+}
+}
+public static void main(String[] args)
+{
+Scanner sc=new Scanner(System.in);
+int N=sc.nextInt();
+int k=1;
+int pos=sc.nextInt();
+int x;
+int arr[]=new int[N];
+int count=0;
+sieve();
+System.out.println("prime factors are");
+while(N!=1)
+{
+x=prime[N];
+arr[k]=x;
+System.out.println(arr[k]);
+k++;
+count++;
+N=N/prime[N];
+}
+System.out.println("no.of prime factors are "+count);
+if(pos<k)
+System.out.println(pos+"th position element is "+arr[pos]);
+else
+System.out.println("-1");
+} 
+}
+
+
+OUTPUT:-
+225 4
+prime factors are
+5
+5
+3
+3
+no.of prime factors are 4
+4th position element is 3
