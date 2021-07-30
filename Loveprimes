@@ -1,0 +1,43 @@
+import java.util.Scanner;
+class Testclass{
+    static int n=100000;
+    static boolean prime[]= new boolean[n+1];
+    static void sieve(int num){
+        for(int i=0;i<=n;i++)
+            prime[i]=true;
+        prime[0]=false;
+        prime[1]=false;
+        for(int i=2;i*i<=n;i++){
+            if(prime[i]){
+                for(int j=i*i;j<=n;j+=i)
+                prime[j]=false;
+            }
+        }
+        int c=0;
+        for(int i=1;i<=num;i++){
+            if(prime[i] && prime[num-i])
+            c++;
+        }
+        if(c!=0)
+        System.out.println("deepa");
+        else
+         System.out.println("arjit");
+    }
+    public static void main(String arg[]){
+        Scanner sc= new Scanner(System.in);
+        int tc=sc.nextInt();
+        int arr[]= new int[tc];
+        for(int i=0;i<tc;i++)
+        arr[i]=sc.nextInt();
+        for(int i=0;i<tc;i++)
+        sieve(arr[i]);
+    }
+}
+
+
+OUTPUT:-
+2
+4
+8
+Deepa
+Deepa
