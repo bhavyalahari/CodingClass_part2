@@ -1,0 +1,46 @@
+import java.util.*;
+class PRIME{
+static int num=50000;
+static int prime[]=new int[num+1];
+static void isprime() {
+for (int i = 0; i <= num; i++)
+ prime[i]=1;
+prime[0]=0;
+prime[1]=0;
+for(int p=2;p*p<=num;p++)
+{
+if(prime[p]==1)
+{
+for(int j=p*p;j<=num;j+=p)
+prime[j]=0;
+}
+}
+}
+public static void main(String args[])
+{
+isprime();
+Scanner sc=new Scanner(System.in);
+int max=Integer.MIN_VALUE;
+System.out.println("enter array size");
+int n=sc.nextInt();
+int arr[]=new int[n];
+System.out.println("enter elements into the array");
+for(int i=0;i<n;i++)
+arr[i]=sc.nextInt();
+for(int i=0;i<n;i++)
+{
+if((prime[arr[i]]==1) && arr[i]>max)
+max=arr[i];
+}
+System.out.println("Largest prime in given array is: "+max);
+}
+}
+
+
+
+
+OUTPUT:-
+enter array size
+5
+11 15 4 16 19
+Largest prime in given array is: 19
