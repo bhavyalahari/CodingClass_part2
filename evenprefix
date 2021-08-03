@@ -1,0 +1,37 @@
+import java.util.*;
+class evenprefixs
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+int n=1000;
+int prefix[]=new int[n];
+prefix[0]=0;
+prefix[1]=2;
+for(int i=2;i<n;i++)
+{
+prefix[i]=prefix[i-1]+2*i;
+}
+System.out.println("No.of.Queries");
+int q=sc.nextInt(); 
+while(q>0)
+ {
+System.out.println("Enter number");
+ int sum=sc.nextInt(); 
+System.out.println("Sum of "+sum+" "+"evennumbers ="+" "+prefix[sum]);
+q--; 
+} 
+}
+}
+
+
+
+OUTPUT:-
+No.of.Queries
+2
+Enter number
+10
+Sum of 10 evennumbers = 110
+Enter number
+5
+Sum of 5 evennumbers = 30
