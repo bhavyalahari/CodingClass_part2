@@ -1,0 +1,59 @@
+import java.util.*;
+public class Update
+ {	
+ public static void main(String args[]) 
+ {				
+ Scanner sc = new Scanner(System.in);	
+ System.out.println("enter size");	
+int n = sc.nextInt();		
+System.out.println("enter elements");
+ int arr[] = new int[n];		
+ for (int i = 0; i <n; i++)
+  {			
+  arr[i] = sc.nextInt();		
+  }		
+  int prefix[] = new int[n];		
+  prefix[0] = arr[0];		
+  for (int i = 1; i <n; i++)
+   {			
+   prefix[i] = prefix[i - 1] + arr[i];		
+   }	
+   System.out.println("enter indexes");	
+   int L= sc.nextInt();		
+   int R = sc.nextInt();		
+   if (L== 0)
+    System.out.println(prefix[R]);		
+    else 
+    System.out.println(prefix[R] - prefix[L- 1]);
+   System.out.println("value to be added");
+    int X=sc.nextInt();
+    System.out.println("enter indexes to add");
+    int A=sc.nextInt();
+    int B=sc.nextInt();
+    for (int i = 1; i <n; i++)
+   {			
+   prefix[i] = prefix[i - 1] + arr[i]+X;		
+   }	
+   System.out.println("after update");
+   if (A== 0)
+    System.out.println(prefix[B]);		
+    else 
+    System.out.println(prefix[B] - prefix[A- 1]);
+    		}
+    		}
+
+
+OUTPUT:-
+enter size
+5
+enter elements
+1 2 3 4 5
+enter indexes
+1 3
+9
+value to be added
+2
+enter indexes to add
+1 3
+after update
+15
