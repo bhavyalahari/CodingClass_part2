@@ -1,0 +1,37 @@
+import java.util.*;
+public class fact
+ {	
+ public static void main(String args[]) 
+ {		
+ Scanner sc = new Scanner(System.in);	
+System.out.println("enter size");	
+int n = sc.nextInt();		
+System.out.println("enter elements");
+ int arr[]=new int[n];
+ for(int i=0;i<n;i++)
+ {
+  arr[i]=sc.nextInt();
+ }
+  int prefix[] = new int[n];		
+  prefix[0] = arr[0];
+  for (int i = 1; i <n; i++)
+   {			
+   prefix[i] = prefix[i - 1] * arr[i];		
+   }		
+   System.out.println("enter element");
+   int k=sc.nextInt();
+  if(k!=0)
+   {
+   System.out.println(prefix[k-1]);
+   }
+ }
+ }
+OUTPUT:-
+enter size
+5
+enter elements
+1 2 3 4 5
+enter element
+5
+120
+
