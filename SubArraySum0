@@ -1,0 +1,49 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter size");
+        int n=sc.nextInt();
+        System.out.println("Enter elements");
+        int a[]=new int[n];
+        for(int i=0;i<n;i++)
+            a[i]= sc.nextInt();
+        Sumzero(a);
+    }
+    static void Sumzero(int a[]) 
+    {
+        HashMap<Integer,Integer> hm= new HashMap<>();
+       int c=0;
+       int sum=0;
+       for(int i=0;i< a.length;i++)
+       {
+           sum=sum+a[i];
+           if(sum==0)
+               c++;
+           if(hm.containsKey(sum))
+           {
+               c=c+hm.get(sum);
+               hm.put(sum,hm.get(sum)+1);
+           }
+           else
+               hm.put(sum,1);
+       }
+       if(c!=0)   
+       	System.out.println("true");
+       else
+       System.out.println("false");
+    }
+}
+
+OUTPUT:-
+Enter size
+5
+Enter elements
+-3 2 3 1 6
+false
+
+
+
+
