@@ -43,7 +43,12 @@ Enter size
 Enter elements
 -3 2 3 1 6
 false
-
+*******************
+Enter size
+5
+Enter array elements
+4 2 0 1 6
+true
 
 
 
