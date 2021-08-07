@@ -1,0 +1,25 @@
+class Solution {
+    public int[] countBits(int n) {
+        int a[]=new int[n+1];
+        for(int i=0;i<=n;i++)
+        {
+            a[i]=count(i);
+        }
+        return a;
+    }
+            public int count(int n)
+            {
+                int c=0;
+                while(n!=0)
+                {
+                    n=n & (n-1);
+                    c++;
+                }
+                return c;
+            }
+}
+
+
+OUTPUT:-
+2
+[0,1,1]
