@@ -1,0 +1,51 @@
+import java.util.*;
+class bubsort
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+System.out.println("enter array size");
+int n=sc.nextInt();
+int a[]=new int[n];
+System.out.println("enter elements");
+for(int i=0;i<n;i++)
+a[i]=sc.nextInt();
+System.out.println("before sorting");
+show(a);
+bubble(a,n);
+System.out.println();
+System.out.println("after sorting");
+show(a);
+}
+public static void bubble(int a[],int n)
+{
+for(int i=0;i<n;i++)
+{
+for(int j=i+1;j<n;j++)
+{
+if(a[i]>a[j])
+{
+int t=a[i];
+a[i]=a[j];
+a[j]=t;
+}
+}
+}
+}
+public static void show(int a[])
+{
+for(int i:a)
+System.out.print(i+" ");
+}
+}
+
+
+OUTPUT:-
+enter array size
+9
+enter elements
+14 11 13 8 10 12 8 2 6
+before sorting
+14 11 13 8 10 12 8 2 6
+after sorting
+2 6 8 8 10 11 12 13 14
