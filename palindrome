@@ -1,0 +1,32 @@
+import java.util.*;
+class palindrome
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+String str=sc.nextLine();
+if(palin(str))
+System.out.println("palindrome");
+else
+System.out.println("not a palindrome");
+}
+static public boolean palin(String str)
+{
+int n=str.length();
+if(n==0 || n==1)
+return true;
+if(str.charAt(0)==str.charAt(n-1))
+return palin(str.substring(1,n-1));
+else
+return false;
+}
+}
+=======================================================
+OUTPUT:-
+enter string
+liril
+palindrome
+=======================================================
+enter string
+hello
+not a palindrome
