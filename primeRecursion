@@ -1,0 +1,30 @@
+import java.util.*;
+class prime
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+System.out.println("enter a number");
+int n=sc.nextInt();
+boolean st=isprime(2,n);
+if(st)
+System.out.println("prime");
+else
+System.out.println("not a prime");
+}
+public static boolean isprime(int i,int n)
+{
+if(n==i)
+ return true;
+else
+if(n%i==0 || n==1)
+ return false;
+else
+ return isprime(i+1,n);
+}
+}
+
+OUTPUT:-
+enter a number
+2
+prime
