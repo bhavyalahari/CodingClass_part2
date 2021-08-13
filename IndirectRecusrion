@@ -1,0 +1,41 @@
+import java.util.*;
+public class indiret
+{
+    static int N;
+    static int n = 1;
+    static void A()
+    {
+        if (n <= N)
+        {
+            System.out.print(n+" ");
+            n=n+1;
+            B();
+        }
+        else    
+            return;
+    }
+    static void B()
+    {
+        if (n <= N)
+        {
+            System.out.print(n+" ");
+            n=n+1;
+            B();
+        }
+        else
+            return;      
+    }
+public static void main(String args[])
+{
+   Scanner sc= new Scanner(System.in);
+   System.out.println("Enter a number ");
+    N=sc.nextInt();
+    A();
+    }
+}
+
+
+OUTPUT:-
+Enter a number
+6
+1 2 3 4 5 6
