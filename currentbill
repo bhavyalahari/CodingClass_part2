@@ -1,0 +1,32 @@
+import java.util.*;
+class bill
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+System.out.println("enter units that you have consumed");
+double u=sc.nextDouble();
+double bi=calc(u);
+System.out.println("amount is:- "+bi+" rupees");
+}
+public static double calc(double u)
+{
+if(u<=100)
+return u*3.25;
+else if(u<=200)
+return (100*3.25)+(u-100)*5.63;
+else if(u<=300)
+return (100*3.25)+(100*5.63)+(u-200)*6.88;
+else if(u<=400)
+return (100*3.25)+(100*5.63)+(100*6.88)+(u-300)*7.38;
+else if(u<=500)
+return (100*3.25)+(100*5.63)+(100*6.88)+(100*7.38)+(u-400)*7.88;
+else
+return (100*3.25)+(100*5.63)+(100*6.88)+(100*7.38)+(100*7.88)+(u-500)*8.38;
+}
+}
+
+OUTPUT:-
+enter units that you have consumed
+125
+amount is:- 465.75 rupees
