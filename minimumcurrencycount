@@ -1,0 +1,39 @@
+import java.util.*;
+public class currency
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+System.out.println("enter amount");
+int amount=sc.nextInt();
+notes(amount);
+}
+public static void notes(int amount)
+{
+int b[]=new int[]{2000,1000,500,200,100,50,20,10,5,2,1};
+int count=0;
+for(int i=0;i<b.length;i++)
+{
+int c=0;
+if(amount>=b[i])
+{
+c=amount/b[i];
+amount=amount-c*b[i];
+}
+if(c!=0)
+System.out.println(b[i]+" : "+ c);
+count+=c;
+}
+System.out.println("minimum no.of notes= "+count);
+}
+}
+
+/*OUTPUT:-
+enter amount
+2305
+2000 : 1
+200 : 1
+100 : 1
+5 : 1
+minimum no.of notes= 4
+*/
